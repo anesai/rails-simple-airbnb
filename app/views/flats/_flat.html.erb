@@ -1,0 +1,22 @@
+<div id="<%= dom_id flat %>">
+  <p>
+    <strong>Name:</strong>
+    <%= flat.name %>
+  </p>
+
+  <p>
+    <strong>Address:</strong>
+    <%= flat.address %>
+  </p>
+
+  <p>
+    <%= british_pound_icon %>
+    <%= flat.price_per_night %>/night
+  </p>
+
+  <p>
+    <%= guests_icon %>
+    <%= flat.number_of_guests %>
+  </p>
+
+</div>
