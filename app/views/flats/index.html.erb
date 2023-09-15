@@ -1,13 +1,13 @@
 <div class="container-fluid d-flex flex-column pb-1 mb-2">
   <nav class="navbar navbar-light bg-light">
     <a href="/flats" class="d-flex text-dark text-decoration-none">Simple Airbnb</a>
-    <a class="btn btn-outline-primary float-right" href="/flats/new">Add flat</a>
+    <%= link_to "New flat", new_flat_path, :class => "btn btn-outline-primary float-right" %>
   </nav>
 </div>
 
 <p style="color: green"><%= notice %></p>
 
-<h1>Flats</h1>
+<h1>All our Flats</h1>
 
 <div id="flats">
   <% @flats.each do |flat| %>
