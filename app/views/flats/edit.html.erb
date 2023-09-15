@@ -1,10 +1,16 @@
-<h1>Editing flat</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="last-right offset-md-4 col-md-4">
+      <h1>Editing flat</h1>
 
-<%= render "form", flat: @flat %>
+      <%= render "form", flat: @flat %>
 
-<br>
+      <br>
 
-<div>
-  <%= link_to "Show this flat", @flat %> |
-  <%= link_to "Back to all flats", flats_path %>
+      <div>
+        <%= link_to "Show this flat", @flat %> |
+        <%= link_to "Back to all flats", flats_path %>
+      </div>
+    </div>
+  </div>
 </div>
