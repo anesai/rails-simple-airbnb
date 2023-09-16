@@ -1,22 +1,32 @@
 <div id="<%= dom_id flat %>">
-  <p>
-    <strong>Name:</strong>
-    <%= flat.name %>
-  </p>
-
-  <p>
-    <strong>Address:</strong>
-    <%= flat.address %>
-  </p>
-
-  <p>
-    <%= british_pound_icon %>
-    <%= flat.price_per_night %>/night
-  </p>
-
-  <p>
-    <%= guests_icon %>
-    <%= flat.number_of_guests %>
-  </p>
-
+  <div class="flat-card-content">
+    <div class="flat-index-card">
+      <div class="flat-card-title">
+        <h4><%= flat.name %></h4>
+      </div>
+      <p>
+        <%= flat.address %>
+      </p>
+      <div class="flex">
+        <span>
+          <%= guests_icon %>
+          <%= flat.number_of_guests %>
+        </span>
+        <span>
+          <%= british_pound_icon %>
+          <%= flat.price_per_night %>/night
+        </span>
+      </div>
+    </div>
+      <div class="flat-card-actions link-container">
+        <%= link_to "More info", flat, class: "action-link" %>
+        <%= link_to "Edit", edit_flat_path(flat), class: "edit-link action-link" %>
+        <%= link_to "Delete",
+          flat_path(flat),
+          method: :delete,
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+          class: "remove-link"
+        %>
+    </div>
+  </div>
 </div>

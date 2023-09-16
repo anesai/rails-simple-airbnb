@@ -1,25 +1,15 @@
-<div class="container-fluid d-flex flex-column pb-1 mb-2">
-  <nav class="navbar navbar-light bg-light">
-    <a href="/flats" class="d-flex text-dark text-decoration-none">Simple Airbnb</a>
-    <%= link_to "New flat", new_flat_path, :class => "btn btn-outline-primary float-right" %>
-  </nav>
-</div>
-
 <p style="color: green"><%= notice %></p>
 
-<h1>All our Flats</h1>
-
-<div id="flats">
-  <% @flats.each do |flat| %>
-    <%= render flat %>
-    <p>
-      <%= link_to "More info", flat %> |
-      <%= link_to "Edit", edit_flat_path(flat) %> |
-      <%= link_to "Delete",
-        flat_path(flat),
-        method: :delete,
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-      %>
-    </p>
-  <% end %>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>All our Flats</h1>
+      <p>See all <%= @flats.length.to_i %> flats</p>
+    </div>
+  </div>
+    <div class="flat-grid">
+      <% @flats.each do |flat| %>
+        <%= render flat %>
+      <% end %>
+  </div>
 </div>
